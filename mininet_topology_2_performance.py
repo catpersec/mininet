@@ -6,6 +6,7 @@ from mininet.node import CPULimitedHost
 from mininet.link import TCLink
 from mininet.util import dumpNodeConnections
 from mininet.log import setLogLevel
+from mininet.cli import CLI
 
 class SingleSwitchTopo( Topo ):
     "Single switch connected to n hosts."
@@ -32,6 +33,7 @@ def perfTest():
     print "Testing bandwidth between h1 and h4"
     h1, h4 = net.get( 'h1', 'h4' )
     net.iperf( (h1, h4) )
+    CLI(net)
     net.stop()
 
 if __name__ == '__main__':
