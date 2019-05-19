@@ -32,7 +32,7 @@ def perfTest():
     print "Testing bandwidth between h1 and h4"
     h1, h4 = net.get( 'h1', 'h4' )
     net.iperf( (h1, h4) )
-    net.stop()
+    #net.stop()
 
 if __name__ == '__main__':
     setLogLevel( 'info' )
