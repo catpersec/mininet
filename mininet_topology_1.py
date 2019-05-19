@@ -1,13 +1,3 @@
-"""
-A simple minimal topology script for Mininet.
- 
-Based in part on examples in the [Introduction to Mininet] page on the Mininet's
-project wiki.
-
-[Introduction to Mininet]: https://github.com/mininet/mininet/wiki/Introduction-to-Mininet#apilevels
-
-"""
-
 from mininet.topo import Topo
 
 class MinimalTopo( Topo ):
