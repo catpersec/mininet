@@ -30,9 +30,6 @@ def perfTest():
     dumpNodeConnections( net.hosts )
     print "Testing network connectivity"
     net.pingAll()
-    print "Testing bandwidth between h1 and h4"
-    h1, h4 = net.get( 'h1', 'h4' )
-    net.iperf( (h1, h4) )
     CLI(net)
     net.stop()
 
