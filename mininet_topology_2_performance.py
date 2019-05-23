@@ -11,6 +11,7 @@ from mininet.cli import CLI
 class SingleSwitchTopo( Topo ):
     "Single switch connected to n hosts."
     def build( self, n=2 ):
+    controller = self.addRemoteController( 'c0')
 	switch = self.addSwitch( 's1' )
 	for h in range(n):
 	    # Each host gets 50%/n of system CPU
