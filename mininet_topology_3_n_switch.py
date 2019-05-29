@@ -25,7 +25,8 @@ of switches, this example demonstrates:
 
 
 from mininet.net import Mininet
-from mininet.node import UserSwitch, OVSKernelSwitch, RemoteController
+from mininet.node import UserSwitch, OVSKernelSwitch
+from mininet.node import Controller, RemoteController, OVSController
 from mininet.topo import Topo
 from mininet.log import lg, info
 from mininet.util import irange, quietRun
@@ -43,7 +44,11 @@ class LinearTestTopo( Topo ):
 
     def build( self, N, **params ):
         # Create switches and hosts
-        controller = self.addRemoteController( 'c0')
+        c0 = self.addController(name='c0',
+                           controller=RemoteController,
+                           ip='127.0.0.1',
+                           protocol='tcp',
+                           port=6633)
         hosts = [ self.addHost( 'h%s' % h )
                   for h in irange( 1, N ) ]
         switches = [ self.addSwitch( 's%s' % s )
