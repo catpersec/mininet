@@ -40,7 +40,7 @@ class LinearTestTopo( Topo ):
 
     def build( self, N, **params ):
         # Create switches and hosts
-
+        controller = self.addRemoteController( 'c0')
         hosts = [ self.addHost( 'h%s' % h )
                   for h in irange( 1, N ) ]
         switches = [ self.addSwitch( 's%s' % s )
