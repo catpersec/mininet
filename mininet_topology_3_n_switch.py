@@ -31,6 +31,9 @@ from mininet.log import lg, info
 from mininet.util import irange, quietRun
 from mininet.link import TCLink
 from functools import partial
+from mininet.cli import CLI
+from mininet.util import dumpNodeConnections
+from mininet.log import setLogLevel
 
 import sys
 flush = sys.stdout.flush
