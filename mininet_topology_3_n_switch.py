@@ -43,7 +43,7 @@ class LinearTestTopo( Topo ):
 
     def build( self, N, **params ):
         # Create switches and hosts
-        #controller = self.addRemoteController( 'c0')
+        controller = self.addRemoteController( 'c0')
         hosts = [ self.addHost( 'h%s' % h )
                   for h in irange( 1, N ) ]
         switches = [ self.addSwitch( 's%s' % s )
@@ -89,7 +89,7 @@ def linearBandwidthTest( lengths ):
         results[ datapath ] = []
         link = partial( TCLink, delay='2ms', bw=10 )
         net = Mininet( topo=topo, switch=Switch,
-                       controller=Controller, waitConnected=True,
+                        waitConnected=True,
                        link=link )
         net.start()
         info( "*** testing basic connectivity\n" )
