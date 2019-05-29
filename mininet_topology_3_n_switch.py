@@ -103,7 +103,7 @@ def linearBandwidthTest( lengths ):
             serverbw, _clientbw = net.iperf( [ src, dst ], seconds=10 )
             info( serverbw, '\n' )
             flush()
-            results[ datapath ] += [ ( n, serverbw ) ]i
+            results[ datapath ] += [ ( n, serverbw ) ]
         CLI(net)
         net.stop()
 
