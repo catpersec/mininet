@@ -93,9 +93,11 @@ def linearBandwidthTest( lengths ):
                         controller=RemoteController,
                        link=link )
         net.start()
+        """
         info( "*** testing basic connectivity\n" )
         for n in lengths:
             net.ping( [ net.hosts[ 0 ], net.hosts[ n ] ] )
+
         info( "*** testing bandwidth\n" )
         for n in lengths:
             src, dst = net.hosts[ 0 ], net.hosts[ n ]
@@ -108,6 +110,7 @@ def linearBandwidthTest( lengths ):
             info( serverbw, '\n' )
             flush()
             results[ datapath ] += [ ( n, serverbw ) ]
+        """
         CLI(net)
         net.stop()
 
