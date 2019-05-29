@@ -86,7 +86,7 @@ def linearBandwidthTest( lengths ):
         results[ datapath ] = []
         link = partial( TCLink, delay='2ms', bw=10 )
         net = Mininet( topo=topo, switch=Switch,
-                       controller=Controller, waitConnected=True,
+                       controller=remote,sys.argv[1], waitConnected=True,
                        link=link )
         net.start()
         info( "*** testing basic connectivity\n" )
@@ -103,7 +103,8 @@ def linearBandwidthTest( lengths ):
             serverbw, _clientbw = net.iperf( [ src, dst ], seconds=10 )
             info( serverbw, '\n' )
             flush()
-            results[ datapath ] += [ ( n, serverbw ) ]
+            results[ datapath ] += [ ( n, serverbw ) ]i
+        CLI(net)
         net.stop()
 
     for datapath in switches.keys():
