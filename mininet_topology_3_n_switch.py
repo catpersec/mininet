@@ -110,7 +110,9 @@ def linearBandwidthTest( lengths ):
             info( serverbw, '\n' )
             flush()
             results[ datapath ] += [ ( n, serverbw ) ]
+
         """
+
         CLI(net)
         net.stop()
 
