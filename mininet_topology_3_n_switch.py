@@ -40,6 +40,7 @@ class LinearTestTopo( Topo ):
 
     def build( self, N, **params ):
         # Create switches and hosts
+
         hosts = [ self.addHost( 'h%s' % h )
                   for h in irange( 1, N ) ]
         switches = [ self.addSwitch( 's%s' % s )
@@ -117,6 +118,6 @@ def linearBandwidthTest( lengths ):
 
 if __name__ == '__main__':
     lg.setLogLevel( 'info' )
-    sizes = [ 1, 10, 20, 40, 60, 80 ]
+    sizes = [ 1, 10 ]
     info( "*** Running linearBandwidthTest", sizes, '\n' )
     linearBandwidthTest( sizes  )
