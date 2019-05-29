@@ -44,7 +44,7 @@ class LinearTestTopo( Topo ):
 
     def build( self, N, **params ):
         # Create switches and hosts
-        c0 = self.addController(name='c0',
+        controller = self.addController(name='c0',
                            controller=RemoteController,
                            ip='127.0.0.1',
                            protocol='tcp',
