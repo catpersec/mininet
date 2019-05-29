@@ -25,7 +25,7 @@ of switches, this example demonstrates:
 
 
 from mininet.net import Mininet
-from mininet.node import UserSwitch, OVSKernelSwitch, Controller
+from mininet.node import UserSwitch, OVSKernelSwitch, RemoteController
 from mininet.topo import Topo
 from mininet.log import lg, info
 from mininet.util import irange, quietRun
