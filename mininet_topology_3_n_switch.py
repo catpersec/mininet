@@ -94,7 +94,7 @@ def linearBandwidthTest( lengths ):
         results[ datapath ] = []
         link = partial( TCLink, delay='2ms', bw=10 )
         net = Mininet( topo=topo, switch=Switch,
-                        waitConnected=True,
+                        controller=RemoteController,waitConnected=True,
                        link=link )
         net.start()
         info( "*** testing basic connectivity\n" )
